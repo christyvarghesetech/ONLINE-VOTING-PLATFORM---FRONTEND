@@ -30,6 +30,14 @@
         <header class="text-center mb-10 relative">
             <h1 class="text-3xl font-bold text-gray-900 mb-2">Cast Your Vote</h1>
             <p class="text-gray-600">Select your preferred candidate below. You can only vote once.</p>
+
+            <div class="mt-6 max-w-sm mx-auto flex gap-2">
+                <input type="url" id="manual-linkedin-input" placeholder="Paste your LinkedIn URL here..."
+                    class="flex-grow px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary outline-none">
+                <button id="btn-update-linkedin" class="btn btn-sm btn-primary whitespace-nowrap">
+                    Update Link
+                </button>
+            </div>
         </header>
 
         <div id="candidates-grid" class="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
