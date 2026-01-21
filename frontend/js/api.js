@@ -104,6 +104,14 @@ const api = {
     },
 
     /**
+     * Check if User has Voted
+     */
+    async hasVoted() {
+        const user = await this.getUser();
+        return user ? user.has_voted : false;
+    },
+
+    /**
      * Get Voters (Admin)
      */
     async getVoters() {
