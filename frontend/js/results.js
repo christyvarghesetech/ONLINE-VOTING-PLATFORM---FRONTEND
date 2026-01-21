@@ -106,9 +106,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <div class="flex-grow">
                             <p class="font-medium text-gray-900">${voter.name}</p>
                         </div>
+                        ${voter.linkedin_profile_url ? `
                         <a href="${voter.linkedin_profile_url}" target="_blank" class="text-blue-500 hover:text-blue-700">
                             <img src="https://www.svgrepo.com/show/448234/linkedin.svg" alt="IN" class="w-5 h-5">
-                        </a>
+                        </a>` : ''}
                     `;
                     votersListEl.appendChild(div);
                 });
