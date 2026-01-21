@@ -104,6 +104,29 @@ const api = {
     },
 
     /**
+     * Update User Profile
+     */
+    async updateUser(data) {
+        const token = this.getToken();
+        if (!token) throw new Error("Not authenticated");
+
+        const response = await fetch(`${API_BASE_URL}/me`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            const err = await response.json();
+            throw new Error(err.message || "Failed to update profile");
+        }
+        return await response.json();
+    },
+
+    /**
      * Check if User has Voted
      */
     async hasVoted() {
