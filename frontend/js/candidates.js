@@ -62,36 +62,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // --- Manual Input Box Logic ---
-    const manualInput = document.getElementById('manual-linkedin-input');
-    const manualBtn = document.getElementById('btn-update-linkedin');
 
-    if (manualBtn && manualInput) {
-        // Pre-fill if exists
-        if (user.linkedin_profile_url) {
-            manualInput.value = user.linkedin_profile_url;
-        }
-
-        manualBtn.addEventListener('click', async () => {
-            const url = manualInput.value.trim();
-            if (!url) {
-                alert("Please enter a valid URL.");
-                return;
-            }
-
-            try {
-                manualBtn.disabled = true;
-                manualBtn.textContent = "Updating...";
-                await mockApi.updateUser({ linkedin_profile_url: url });
-                alert("LinkedIn Link Updated Successfully!");
-                location.reload();
-            } catch (error) {
-                alert("Error: " + error.message);
-                manualBtn.disabled = false;
-                manualBtn.textContent = "Update Link";
-            }
-        });
-    }
 
 
 
