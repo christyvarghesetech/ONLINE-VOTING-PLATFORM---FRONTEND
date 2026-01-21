@@ -60,6 +60,14 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             });
         }
+
+        // Wire up Manual Edit Button
+        const btnEditProfile = document.getElementById('btn-edit-profile');
+        if (btnEditProfile && modal) {
+            btnEditProfile.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+            });
+        }
     }
 
     // Logout
