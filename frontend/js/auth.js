@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
         const user = await mockApi.getUser();
         if (user) {
-            window.location.href = 'candidates.html';
+            window.location.href = 'candidates.chtml';
             return;
         }
     }
@@ -32,13 +32,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Direct redirects to backend auth endpoints
     if (btnGoogle) {
         btnGoogle.addEventListener('click', () => {
-            window.location.href = 'http://localhost:8000/auth/google';
+            // Use the global API service to get the correct Production URL
+            mockApi.login('google');
         });
     }
 
     if (btnLinkedin) {
         btnLinkedin.addEventListener('click', () => {
-            window.location.href = 'http://localhost:8000/auth/linkedin';
+            mockApi.login('linkedin');
         });
     }
 });
