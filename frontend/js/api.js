@@ -5,7 +5,7 @@
 
 // CHANGE THIS TO YOUR RENDER URL IN PRODUCTION
 // e.g., const API_BASE_URL = "https://your-app-name.onrender.com";
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "https://voting-backend-dl2q.onrender.com";
 
 const api = {
 
